@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+    {% load static  %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% block title %}Main{% endblock %}</title>
+    
+    {% block style %}{% endblock %}
+
+    
+    <link rel="stylesheet" href="{% static 'my_app/css/googleFonts.css'  %}" media="screen,projection"/>   
+    <link rel="stylesheet" href="{% static 'my_app/css/materialize.css'  %}" media="screen,projection"/>
+    
+  </head>
+  <body>
+      
+    <div class="container">
+      <div class="card-panel">
+        
+                
+        {% block back %}
+            <a class="brown-text" href="{% url 'home' %}">
+                <i class="material-icons">arrow_back</i>
+            </a>
+        {% endblock %}
+
+        
+    
+    
+        <h5 class="brown-text">
+            {% block card-title %}Title{% endblock %}
+        </h5>
+
+      
+      </div>
+     
+     
+      {% block content %}{% endblock %}
+      
+      </div>
+      
+      <script type="text/javascript" src = "{% static 'my_app/js/jquery.js' %}"></script>             
+      <script type="text/javascript" src = "{% static 'my_app/js/materialize.js' %} "></script>  
+    {% block script %} {% endblock %}
+  </body>
+</html>
+
+
+
+
+
+
+

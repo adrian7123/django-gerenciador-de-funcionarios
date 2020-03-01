@@ -1,0 +1,54 @@
+{% extends '_layouts/main.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block style %} 
+    <style>
+        .u400 {
+            padding: 20px 0;
+        }
+        
+        .btn-small, .btn {
+            width: 100%;
+        }
+        
+        .col {
+            margin-bottom: 15px;
+        }
+        
+    </style>
+    
+{% endblock %}
+
+{% block back %}{% endblock %}
+
+{% block card-title %}Sistema Gerenciador de Funcionários {%endblock%}
+
+{% block content %}
+        
+  <div class="card-panel u400">
+      <div class="row">
+          <div class="col s12">
+              <a href="{% url 'funcionarios' %}" class="waves-effect brown darken-1 btn pulse ">
+                  Tabela de Funcionários 
+              </a>
+          </div>
+          <div class="col s12 ">
+              <a href="{% url 'cadastroFunc' %}" class="waves-effect brown darken-1 btn">
+                  Cadastrar Funcionário
+              </a>
+          </div>
+      </div>
+  </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

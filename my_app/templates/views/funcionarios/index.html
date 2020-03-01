@@ -1,0 +1,41 @@
+{% extends '_layouts/main.html' %}
+
+{% block title %} Tabela de Funcionários {% endblock %}
+
+{% block card-title %} Tabela de Funcionários {% endblock %}
+
+{% block content %}
+
+       <ul class = "collapsible">  
+
+         {% for fun in func %}
+         <li>  
+            <div class = "collapsible-header">  
+               <i class = "material-icons">face</i>
+               {{ fun.nome }}
+               <span class="new badge" data-badge-caption=" " >
+                   {{ fun.empresa }}
+               </span>
+            </div>  
+            <div class="collapsible-body">
+                    
+                <a href="{% url 'deletarFunc' fun.id %}" class="btn"><i class="material-icons">delete</i></a>
+                <a href="{% url 'editarFunc' fun.id %}" class="btn yellow"><i class="material-icons">edit</i></a>
+                
+            </div>  
+         </li>  
+         {% endfor %}
+         
+      </ul>       
+      
+    <div class="fixed-action-btn">
+        <a href="{% url 'cadastroFunc' %}" class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+   </div>
+      
+      
+    
+{% endblock %}
+   
+

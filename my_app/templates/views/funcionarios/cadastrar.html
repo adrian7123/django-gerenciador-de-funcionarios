@@ -1,0 +1,68 @@
+{% extends '_layouts/main.html' %}
+
+{% block title %} Cadastro {% endblock %}
+
+{% block card-title %} Cadastro de Funcionários {% endblock %}
+
+{% block content %}
+    
+    <div class="card-panel">
+          <div class="row">
+              
+              
+            <form class="col s12" action="{% url 'cadastrarFunc' %}" method="POST">
+              {% csrf_token %} 
+                
+              <div class="row">
+                <div class="input-field col s12">
+                 
+                  <input name="nome" id="first_name" type="text" class="validate" 
+                  value="{{ req.POST.nome }}">  
+                  
+                  <label for="first_name">Nome</label></label>
+                </div>
+              </div>
+              <div class="row">
+               <div class="input-field col s12">
+                
+                  <input name="sobrenome" id="last_name" type="text" class="validate" 
+                  value="{{ req.POST.sobrenome }}">
+                 
+                  <label for="last_name">Sobrenome</label>
+               </div>
+              </div>
+              <div class="row">
+               <div class="input-field col s12">
+                
+                  <input name="empresa" id="empresa" type="text" class="validate" 
+                  value="{{ req.POST.empresa }}">
+                 
+                  <label for="empresa">Empresa</label>
+               </div>
+              </div>
+              <div class="row">
+               <div class="input-field col s12">
+                 
+                  <input name="cargo" id="cargo" type="text" class="validate" 
+                  value="{{ req.POST.cargo }}">
+                 
+                  <label for="cargo" >Cargo</label>
+               </div>
+              </div>
+              
+              
+             <div class="col s9 offset-s6">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                   Cadastrar
+                   <i class="material-icons right">send</i>
+                </button>
+             </div>
+              
+         </form>
+        </div>
+        
+    </div>
+
+
+
+{% endblock %}
